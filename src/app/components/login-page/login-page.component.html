@@ -3,16 +3,16 @@
     <div class="card">
       <div class="card-body">
         <h1 class="text-center">Please, insert your data</h1>
-        <form>
+        <form (submit)="onLoginUser()">
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" class="form-control">
+            <input type="email" name="email" id="email" [(ngModel)]="email" class="form-control">
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" name="password" id="password" class="form-control">
+            <input type="password" name="password" id="password" [(ngModel)]="password" class="form-control">
           </div>
-          <input type="button" value="SEND" class="btn btn-primary btn-lg btn-block">
+          <input type="submit" value="SEND" class="btn btn-primary btn-lg btn-block">
         </form>
       </div>
     </div>

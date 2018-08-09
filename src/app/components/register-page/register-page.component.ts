@@ -22,7 +22,7 @@ export class RegisterPageComponent implements OnInit {
     this.authService.registerUser(this.email, this.password)
     .then((res) => {
       console.log('BIEN');
-      this.router.navigate(['/private']);
+      this.router.navigate(['/']);
     }).catch((err) => {
       console.log(err);
     });
