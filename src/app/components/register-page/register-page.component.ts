@@ -20,13 +20,15 @@ export class RegisterPageComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmitAddUser() {
+  onAddUser() {
     this.authService.registerUser(this.email, this.password)
     .then((res) => {
-      this.flashMessage.show('User created correctly', {cssClass: 'alert-success', timeout: 5000});
+      this.flashMessage.show('User created correctly', {cssClass: 'alert-success', timeout: 4000});
       this.router.navigate(['/']);
     }).catch((err) => {
-      this.flashMessage.show(err.message, {cssClass: 'alert-danger', timeout: 5000});
+      this.flashMessage.show(err.message, {cssClass: 'alert-danger', timeout: 4000});
+      this.email = '';
+      this.password = '';
       this.router.navigate(['/register']);
     });
   }
